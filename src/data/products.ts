@@ -346,14 +346,18 @@ export const products: Product[] = [
   {
     id: 'restaurant-saas',
     slug: 'restaurant-saas',
-    name: 'Restaurant SaaS (Servora)',
+    name: 'Servora — Restaurant OS & QR Dine-In',
     shortName: 'Servora',
     code: 'Servora',
     category: 'Restaurant',
-    description: 'QR-based ordering, menu management, billing and analytics.',
-    longDescription: 'All-in-one hospitality operating system empowering dine-in contactless QR ordering, live Kitchen Display Systems (KDS), cloud billing, captain app, and revenue analytics.',
+    description: 'Contactless QR Menu, Live Kitchen Display (KDS), and Smart GST Billing Platform.',
+    longDescription: 'Streamline table turnover, eliminate ordering delays, and boost profit margins with Servora — the all-in-one Contactless QR Menu, Live Kitchen Display (KDS), and Smart GST Billing Platform.',
+    headline: 'The Operating System for Modern Restaurants.',
+    subheadline: 'Streamline table turnover, eliminate ordering delays, and boost profit margins with Servora — the all-in-one Contactless QR Menu, Live Kitchen Display (KDS), and Smart GST Billing Platform.',
+    socialProof: 'Trusted by modern cafes, fine dining bistros, multi-outlet food courts, and cloud kitchens.',
+    liveUrl: 'https://servora.quantumesh.in/',
     iconName: 'UtensilsCrossed',
-    badge: 'Hospitality Cloud',
+    badge: 'Hospitality Cloud OS',
     image: '/assets/generated/product-restaurant.jpg',
     theme: {
       bg: 'bg-[#FDF2F8]',
@@ -363,64 +367,169 @@ export const products: Product[] = [
       textAccent: '#DB2777',
       gradient: 'from-pink-500 to-rose-600',
     },
+    pillars: [
+      {
+        icon: 'Zap',
+        title: 'Ultra-Fast Contactless QR Ordering',
+        quote: 'Turn tables 35% faster with zero waiter dependency.',
+        points: [
+          'Guests simply scan a sleek table QR code to view high-definition culinary menus.',
+          'Seamless vegetarian/non-vegetarian filters, portion variants (Half/Full), and live dish customization.',
+          'No app download required — loads instantly in any mobile browser in under 1 second.'
+        ]
+      },
+      {
+        icon: 'ChefHat',
+        title: 'Live Kitchen Display System (KDS)',
+        quote: 'Say goodbye to lost paper tickets and kitchen chaos.',
+        points: [
+          'Orders placed by guests or staff beam straight to kitchen displays with real-time sound chimes.',
+          'Color-coded order tracking (Pending → Cooking → Ready → Served) keeps chefs and captains in perfect sync.',
+          'Eliminates order mix-ups and reduces food prep wait times.'
+        ]
+      },
+      {
+        icon: 'CreditCard',
+        title: 'Smart POS & Instant Split-Billing Engine',
+        quote: 'Collect payments in seconds with zero gateway commissions.',
+        points: [
+          'Dynamic UPI QR Codes: Customers scan and pay instantly via Google Pay, PhonePe, or Paytm with automatic payment verification.',
+          'Split Bills Easily: Split evenly across friends, split by custom amounts, or split by individual dishes.',
+          'Compliant GST Invoicing: Automated 5% / 18% tax calculation, round-off handling, and 1-click thermal receipt printing (80mm & 58mm).'
+        ]
+      }
+    ],
+    featureMatrix: [
+      {
+        feature: '🎨 QR Template Studio',
+        benefit: 'Design and download custom branded acrylic QR table standees with WiFi login details in seconds.'
+      },
+      {
+        feature: '📊 Live Table Status Grid',
+        benefit: 'Monitor occupied, available, and billing tables in real-time across your entire dining floor.'
+      },
+      {
+        feature: '📦 1-Click Menu & Inventory',
+        benefit: 'Instantly toggle out-of-stock items, bulk-upload dishes via CSV, and adjust pricing in real-time.'
+      },
+      {
+        feature: '📈 Executive Analytics',
+        benefit: 'Track daily revenue, top-selling dishes, peak dining hours, and monthly sales growth with visual dashboards.'
+      },
+      {
+        feature: '🔒 Multi-Tenant Security',
+        benefit: 'Cloud-backed data security with daily automated backups and encrypted staff access control.'
+      }
+    ],
+    pricingPlans: [
+      {
+        name: 'Starter Plan',
+        price: '₹999',
+        period: '/ month',
+        description: 'Ideal for small cafes, bakeries, and quick-service kiosks.',
+        features: [
+          'Up to 10 Active Tables',
+          'Digital QR Contactless Menu',
+          'Real-time Order Management',
+          'Standard UPI QR Billing',
+          'Email Support'
+        ]
+      },
+      {
+        name: 'Professional Plan',
+        price: '₹2,499',
+        period: '/ month',
+        popular: true,
+        description: 'Built for busy casual dining, bistros, and high-volume restaurants.',
+        features: [
+          'Unlimited Tables & Diners',
+          'Real-time Kitchen Display System (KDS)',
+          'Advanced Multi-Payer Split Billing & GST Invoices',
+          'QR Template Studio with Bulk Standee Export',
+          'Live Sales Analytics & Inventory Manager',
+          '24/7 Priority Support'
+        ]
+      },
+      {
+        name: 'Enterprise Plan',
+        price: '₹4,999',
+        period: '/ month',
+        description: 'For multi-branch restaurants, franchises, and luxury dining spaces.',
+        features: [
+          'Multi-Branch & Chain Management',
+          'Custom Domain & White-Label Branding',
+          'Dedicated Account Manager & VIP Onboarding',
+          'Custom ERP / Accounting Integrations',
+          '99.9% Uptime SLA'
+        ]
+      }
+    ],
     features: [
-      'Contactless table QR code digital menus',
-      'Live Kitchen Display System (KDS)',
-      'Touchscreen POS billing with thermal printing',
-      'Table allocation & live seating occupancy',
-      'Real-time recipe & inventory depletion',
-      'Multi-outlet menu & pricing syndication',
-      'Captain order-taking mobile PWA',
-      'Daily sales & popular dish analytics'
+      'Contactless table QR code digital menus (loads < 1 sec)',
+      'Live Kitchen Display System (KDS) with sound chimes',
+      'Dynamic UPI QR code billing with automatic payment verification',
+      'Flexible split-billing (equal, custom amounts, or by dish)',
+      'Compliant GST invoicing with 80mm & 58mm thermal printing',
+      'Live floor table status grid & seating occupancy',
+      'Instant 1-click out-of-stock item toggling',
+      'QR Template Studio for branded acrylic table standees'
     ],
     metrics: [
-      { label: 'Table Turnover Speed', value: '+28%' },
-      { label: 'Average Order Value', value: '+18%' },
-      { label: 'Order to Kitchen Time', value: '< 3 secs' },
-      { label: 'Staff Efficiency Gain', value: '40%' }
+      { label: 'Table Turnover Speed', value: '+35%' },
+      { label: 'Payment Commission', value: '0%' },
+      { label: 'Menu Load Speed', value: '< 1 sec' },
+      { label: 'Order to Kitchen Delay', value: '0 ms' }
     ],
     benefits: [
-      'Dynamic digital menus updated in real-time with one-tap out-of-stock toggles and high-resolution food photography.',
-      'Dine-in guests order directly from their phone with zero app download needed, speeding up service during peak hours.',
-      'Kitchen Display System (KDS) eliminates paper tickets and order confusion between kitchen chefs and service captains.',
-      'Multi-outlet menu syndication and unified daily revenue reporting across all your cafe and restaurant branches.'
+      'Turn tables 35% faster with zero waiter dependency, letting guests scan, customize, and order instantly.',
+      'Eliminate kitchen chaos and lost paper tickets with real-time color-coded KDS station displays and chimes.',
+      'Zero gateway commissions (0%) — collect customer payments directly into your bank via dynamic UPI QR codes.',
+      'Automatic 5% and 18% GST calculation with instant split-bill capabilities and 1-click thermal receipt printing.'
     ],
     modules: [
       {
-        title: 'QR Code Table Ordering',
-        desc: 'Smart acrylic table stands with QR codes enabling guests to browse visual menus, customize dishes, and order instantly.',
-        highlights: ['Zero-app installation (runs in mobile browser)', 'Chef recommendations and add-on prompts', 'Special allergy and cooking instructions']
+        title: 'Ultra-Fast Contactless QR Ordering',
+        desc: 'Sleek acrylic QR standees loaded in mobile browsers in <1 second with zero app download required. Includes dietary filters and portion sizing.',
+        highlights: ['Runs natively in Chrome/Safari (< 1s load)', 'Veg/Non-Veg filters & portion variants (Half/Full)', 'Live dish customization & cooking instructions']
       },
       {
-        title: 'Kitchen Display System (KDS)',
-        desc: 'Wall-mounted monitors inside the kitchen replacing paper KOTs with color-coded timers showing new, prep, and ready orders.',
-        highlights: ['Station-wise order routing (Bar, Grill, Dessert)', 'Elapsed time alerts for delayed tickets', 'Bump-bar and touchscreen order clearance']
+        title: 'Live Kitchen Display System (KDS)',
+        desc: 'Replaces lost paper tickets with color-coded live kitchen screens and alert chimes that keep chefs and captains in sync.',
+        highlights: ['Sound chime on new order placement', 'Pending → Cooking → Ready → Served workflow', 'Eliminates order mix-ups and reduces kitchen delays']
       },
       {
-        title: 'Cloud POS & Cashier Counter',
-        desc: 'Rapid billing software supporting table merging, bill splitting, discounts, promo codes, and thermal receipt printing.',
-        highlights: ['UPI QR code printed on bill', 'Offline mode with background synchronization', 'Compatible with thermal USB/Bluetooth printers']
+        title: 'Smart POS & Instant Split Billing',
+        desc: 'Rapid billing with dynamic UPI QR codes (GPay, PhonePe, Paytm), split billing by person or item, and 80mm/58mm GST thermal printing.',
+        highlights: ['0% gateway commissions — direct bank UPI', 'Split bills evenly, custom amounts, or by dish', 'Automated 5% / 18% GST tax calculation']
       },
       {
-        title: 'Inventory & Recipe Costing',
-        desc: 'Direct link between recipes and stock inventory. When a burger is ordered, buns, patties, and cheese are automatically deducted.',
-        highlights: ['Real-time food cost percentage tracking', 'Low ingredient stock threshold notifications', 'Vendor purchase order management']
+        title: 'Executive Analytics & Live Table Grid',
+        desc: 'Visual floor grid showing occupied and billing tables in real-time, coupled with peak dining hours and dish profitability metrics.',
+        highlights: ['Live dining floor table occupancy', 'Top-selling dishes & revenue growth reports', '1-click out-of-stock toggle from smartphone']
       }
     ],
     workflow: [
-      { step: '01', title: 'Table QR Scan', desc: 'Guests scan smart table QR to browse visual menu and item recommendations.' },
-      { step: '02', title: 'KOT Direct Routing', desc: 'Orders transmit directly to kitchen stations with special cooking notes.' },
-      { step: '03', title: 'Preparation & Serving', desc: 'Kitchen updates progress, alerting service staff when dishes are ready.' },
-      { step: '04', title: 'Split Bill & Pay', desc: 'Guests can split bills and pay via UPI, cards, or settle at reception.' }
+      { step: '01', title: 'Table QR Scan', desc: 'Guests scan sleek table QR to view high-definition visual menu in <1s with zero app download.' },
+      { step: '02', title: 'Instant KDS Routing', desc: 'Orders beam instantly to kitchen displays with real-time sound chimes and color-coded statuses.' },
+      { step: '03', title: 'Fast Food Preparation', desc: 'Chefs update tickets (Pending → Cooking → Ready), reducing prep time and eliminating lost paper slips.' },
+      { step: '04', title: 'Split Bill & UPI Pay', desc: 'Guests split bills easily and pay via dynamic UPI QR code (0% commission) with instant GST receipt.' }
     ],
     faqs: [
       {
-        question: 'Does Servora POS work if the internet disconnects?',
-        answer: 'Yes, Servora features an offline-first architecture. Cashiers can continue punch billing and print thermal receipts offline; data automatically syncs once connection is restored.'
+        question: 'Do customers need to download an application to order?',
+        answer: 'No! Servora runs natively on any smartphone browser (Chrome, Safari, etc.). Customers simply scan the QR code and the live menu opens in less than a second.'
       },
       {
-        question: 'Do customers need to download an application to order?',
-        answer: 'No app download is required. Scanning the table QR opens an ultra-fast Progressive Web App (PWA) directly in Chrome, Safari, or any mobile browser.'
+        question: 'Does Servora take a commission on customer orders?',
+        answer: 'Zero percent (0%). You keep 100% of your earnings. Payments go directly to your restaurant\'s bank account via direct UPI or cash.'
+      },
+      {
+        question: 'Can I print traditional paper receipts?',
+        answer: 'Yes! Servora generates formatted GST tax invoices that print seamlessly on any standard 58mm or 80mm thermal receipt printer.'
+      },
+      {
+        question: 'How do I change menu item prices or mark items out of stock?',
+        answer: 'You can toggle item availability or update prices from your phone or dashboard in 1 click. The customer\'s digital menu updates immediately in real time.'
       }
     ],
     techStack: ['React', 'WebSockets', 'PWA', 'Tailwind CSS', 'Node.js', 'PostgreSQL'],

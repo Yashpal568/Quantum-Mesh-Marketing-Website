@@ -9,6 +9,28 @@ export interface Product {
   longDescription: string;
   iconName: string;
   badge: string;
+  liveUrl?: string;
+  headline?: string;
+  subheadline?: string;
+  socialProof?: string;
+  pillars?: {
+    icon?: string;
+    title: string;
+    quote: string;
+    points: string[];
+  }[];
+  featureMatrix?: {
+    feature: string;
+    benefit: string;
+  }[];
+  pricingPlans?: {
+    name: string;
+    price: string;
+    period: string;
+    popular?: boolean;
+    description: string;
+    features: string[];
+  }[];
   theme: {
     bg: string;
     border: string;

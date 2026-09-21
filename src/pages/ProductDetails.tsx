@@ -11,7 +11,14 @@ import {
   HelpCircle,
   ChevronDown,
   ShieldCheck,
-  Check
+  Check,
+  ExternalLink,
+  Zap,
+  ChefHat,
+  CreditCard,
+  Sparkles,
+  Star,
+  ArrowRight
 } from 'lucide-react';
 import { products } from '../data/products';
 import { Button } from '../components/ui/Button';
@@ -30,6 +37,7 @@ export const ProductDetails: React.FC = () => {
 
   const product = products.find((p) => 
     p.slug === slug || 
+    (slug === 'servora' && p.slug === 'restaurant-saas') ||
     (slug === 'school-erp' && p.slug === 'school-management-saas') || 
     (slug === 'school-management-system-saas' && p.slug === 'school-management-saas') ||
     (slug === 'school-management' && p.slug === 'school-management-saas')
@@ -97,14 +105,20 @@ export const ProductDetails: React.FC = () => {
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                   Production Ready v3.4
                 </span>
+                {product.socialProof && (
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-800 text-xs font-medium border border-amber-200/80">
+                    <Star className="w-3.5 h-3.5 text-amber-500 fill-amber-500 shrink-0" />
+                    <span>{product.socialProof}</span>
+                  </span>
+                )}
               </div>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                {product.name}
+                {product.headline || product.name}
               </h1>
 
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-                {product.longDescription}
+                {product.subheadline || product.longDescription}
               </p>
 
               {/* Highlight Checklist */}
@@ -118,27 +132,51 @@ export const ProductDetails: React.FC = () => {
               </div>
 
               {/* CTAs */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-4 w-full max-w-md">
-                <Button
-                  variant="primary"
-                  size="lg"
-                  onClick={() => openModal('demo', product.name)}
-                  leftIcon={<Calendar className="w-4 h-4" />}
-                  className="w-full sm:w-auto justify-center"
-                >
-                  Book a Live Demo
-                </Button>
+              {product.liveUrl ? (
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-4 w-full max-w-lg">
+                  <a
+                    href={product.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 text-white shadow-lg shadow-pink-500/25 transition-all gap-2"
+                  >
+                    <Sparkles className="w-4 h-4 text-pink-200" />
+                    <span>Start Free 14-Day Trial</span>
+                  </a>
 
-                <Button
-                  variant="secondary"
-                  size="lg"
-                  onClick={() => openModal('inquiry', product.name)}
-                  leftIcon={<MessageSquare className="w-4 h-4" />}
-                  className="w-full sm:w-auto justify-center"
-                >
-                  Customer Inquiry
-                </Button>
-              </div>
+                  <a
+                    href={product.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl font-bold text-sm bg-white text-slate-800 border border-slate-200 hover:bg-slate-50 hover:border-slate-300 shadow-xs transition-all gap-2"
+                  >
+                    <span>Explore Live Interactive Demo</span>
+                    <ExternalLink className="w-4 h-4 text-pink-600" />
+                  </a>
+                </div>
+              ) : (
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-4 w-full max-w-md">
+                  <Button
+                    variant="primary"
+                    size="lg"
+                    onClick={() => openModal('demo', product.name)}
+                    leftIcon={<Calendar className="w-4 h-4" />}
+                    className="w-full sm:w-auto justify-center"
+                  >
+                    Book a Live Demo
+                  </Button>
+
+                  <Button
+                    variant="secondary"
+                    size="lg"
+                    onClick={() => openModal('inquiry', product.name)}
+                    leftIcon={<MessageSquare className="w-4 h-4" />}
+                    className="w-full sm:w-auto justify-center"
+                  >
+                    Customer Inquiry
+                  </Button>
+                </div>
+              )}
 
               <div className="pt-2 flex items-center gap-4 text-xs text-slate-400">
                 <span className="flex items-center gap-1">
@@ -164,9 +202,21 @@ export const ProductDetails: React.FC = () => {
                   
                   {/* Floating live badges */}
                   <div className="absolute top-3 left-3">
-                    <span className="px-2.5 py-1 rounded-full text-[10px] font-bold border backdrop-blur-md shadow-xs bg-white/95 text-brand-blue border-blue-100">
-                      Interactive UI Showcase
-                    </span>
+                    {product.liveUrl ? (
+                      <a
+                        href={product.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold border backdrop-blur-md shadow-sm bg-pink-600 text-white border-pink-400/50 hover:bg-pink-700 transition-colors"
+                      >
+                        <span>Live at servora.quantumesh.in</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    ) : (
+                      <span className="px-2.5 py-1 rounded-full text-[10px] font-bold border backdrop-blur-md shadow-xs bg-white/95 text-brand-blue border-blue-100">
+                        Interactive UI Showcase
+                      </span>
+                    )}
                   </div>
 
                   <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] text-white">
@@ -197,6 +247,59 @@ export const ProductDetails: React.FC = () => {
             </div>
           ))}
         </div>
+
+        {/* Value Proposition: The 3 Core Pillars */}
+        {product.pillars && product.pillars.length > 0 && (
+          <div className="mb-16">
+            <div className="text-left mb-8">
+              <span className="text-xs font-bold tracking-widest text-pink-600 uppercase flex items-center gap-1.5">
+                <Zap className="w-3.5 h-3.5" />
+                <span>VALUE PROPOSITION</span>
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+                The 3 Core Pillars
+              </h2>
+              <p className="text-sm text-slate-600 mt-1">
+                Engineered to accelerate table turns, eliminate kitchen errors, and maximize profit margins.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {product.pillars.map((pillar, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white rounded-3xl p-7 border border-slate-200/90 shadow-xs hover:shadow-md hover:border-pink-200 transition-all flex flex-col justify-between group"
+                >
+                  <div>
+                    <div className="w-12 h-12 rounded-2xl bg-pink-50 text-pink-600 flex items-center justify-center mb-5 border border-pink-100 group-hover:scale-110 transition-transform">
+                      {pillar.icon === 'Zap' && <Zap className="w-6 h-6" />}
+                      {pillar.icon === 'ChefHat' && <ChefHat className="w-6 h-6" />}
+                      {pillar.icon === 'CreditCard' && <CreditCard className="w-6 h-6" />}
+                      {!['Zap', 'ChefHat', 'CreditCard'].includes(pillar.icon || '') && <Sparkles className="w-6 h-6" />}
+                    </div>
+
+                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">
+                      {pillar.title}
+                    </h3>
+
+                    <div className="p-3 rounded-xl bg-pink-50/70 border border-pink-100/80 text-xs font-bold text-pink-700 mb-4 leading-relaxed">
+                      “{pillar.quote}”
+                    </div>
+
+                    <ul className="space-y-2.5">
+                      {pillar.points.map((pt, pIdx) => (
+                        <li key={pIdx} className="flex items-start text-xs sm:text-sm text-slate-600 gap-2.5">
+                          <CheckCircle2 className="w-4 h-4 text-pink-600 shrink-0 mt-0.5" />
+                          <span className="leading-relaxed">{pt}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Core Enterprise Modules (In-Depth Breakdown) */}
         {product.modules && product.modules.length > 0 && (
@@ -272,6 +375,43 @@ export const ProductDetails: React.FC = () => {
           </div>
         </div>
 
+        {/* Product Feature Matrix */}
+        {product.featureMatrix && product.featureMatrix.length > 0 && (
+          <div className="mb-16 bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/90 shadow-xs">
+            <div className="text-left mb-8">
+              <span className="text-xs font-bold tracking-widest text-pink-600 uppercase flex items-center gap-1.5">
+                <Layers className="w-3.5 h-3.5" />
+                <span>CAPABILITY MATRIX</span>
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+                Product Feature Matrix
+              </h2>
+              <p className="text-sm text-slate-600 mt-1">
+                Engineered for maximum dining floor visibility and zero waiter dependency.
+              </p>
+            </div>
+
+            <div className="overflow-x-auto rounded-2xl border border-slate-200">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="border-b border-slate-200 bg-slate-50/80">
+                    <th className="py-4 px-5 sm:px-6 text-xs font-bold uppercase tracking-wider text-slate-800">Feature</th>
+                    <th className="py-4 px-5 sm:px-6 text-xs font-bold uppercase tracking-wider text-slate-800">What It Does for the Restaurant Owner</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100 text-sm">
+                  {product.featureMatrix.map((item, i) => (
+                    <tr key={i} className="hover:bg-slate-50/60 transition-colors">
+                      <td className="py-4 px-5 sm:px-6 font-bold text-slate-900 whitespace-nowrap">{item.feature}</td>
+                      <td className="py-4 px-5 sm:px-6 text-slate-600 leading-relaxed">{item.benefit}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+
         {/* Operational Workflow Steps */}
         <div className="mb-16 bg-slate-50/70 rounded-3xl p-6 sm:p-10 border border-slate-200/90">
           <div className="text-left mb-8">
@@ -345,6 +485,103 @@ export const ProductDetails: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* Transparent Pricing Table */}
+        {product.pricingPlans && product.pricingPlans.length > 0 && (
+          <div className="mb-16">
+            <div className="text-left sm:text-center max-w-2xl mx-auto mb-10">
+              <span className="text-xs font-bold tracking-widest text-pink-600 uppercase flex items-center justify-start sm:justify-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>TRANSPARENT PRICING</span>
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-1">
+                Transparent Pricing Plans
+              </h2>
+              <p className="text-sm sm:text-base text-slate-600 mt-2">
+                Predictable monthly subscriptions. <strong>Zero percent (0%)</strong> order commission. Keep 100% of your earnings.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+              {product.pricingPlans.map((plan, idx) => (
+                <div
+                  key={idx}
+                  className={`rounded-3xl p-7 sm:p-8 flex flex-col justify-between transition-all relative ${
+                    plan.popular
+                      ? 'bg-gradient-to-b from-slate-900 via-slate-900 to-brand-navy text-white border-2 border-pink-500 shadow-xl scale-100 lg:scale-105 z-10'
+                      : 'bg-white text-slate-900 border border-slate-200/90 shadow-xs hover:border-slate-300'
+                  }`}
+                >
+                  {plan.popular && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                      <span className="px-3.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-sm flex items-center gap-1">
+                        <Star className="w-3 h-3 fill-white" />
+                        Most Popular
+                      </span>
+                    </div>
+                  )}
+
+                  <div>
+                    <h3 className={`text-xl font-bold ${plan.popular ? 'text-white' : 'text-slate-900'}`}>
+                      {plan.name}
+                    </h3>
+                    <p className={`text-xs mt-1 min-h-[36px] leading-relaxed ${plan.popular ? 'text-slate-300' : 'text-slate-500'}`}>
+                      {plan.description}
+                    </p>
+
+                    <div className="my-6 flex items-baseline gap-1">
+                      <span className={`text-4xl font-black tracking-tight ${plan.popular ? 'text-white' : 'text-slate-900'}`}>
+                        {plan.price}
+                      </span>
+                      <span className={`text-xs font-semibold ${plan.popular ? 'text-slate-300' : 'text-slate-500'}`}>
+                        {plan.period}
+                      </span>
+                    </div>
+
+                    <div className={`space-y-3 pt-4 border-t ${plan.popular ? 'border-white/10' : 'border-slate-100'}`}>
+                      {plan.features.map((feat, fIdx) => (
+                        <div key={fIdx} className="flex items-start gap-2.5 text-xs sm:text-sm">
+                          <CheckCircle2 className={`w-4 h-4 shrink-0 mt-0.5 ${plan.popular ? 'text-pink-400' : 'text-emerald-600'}`} />
+                          <span className={plan.popular ? 'text-slate-200' : 'text-slate-700'}>{feat}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="pt-8">
+                    {product.liveUrl ? (
+                      <a
+                        href={product.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`w-full py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all ${
+                          plan.popular
+                            ? 'bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white shadow-lg shadow-pink-500/30'
+                            : 'bg-slate-100 hover:bg-slate-200 text-slate-800'
+                        }`}
+                      >
+                        <span>Start Free 14-Day Trial</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </a>
+                    ) : (
+                      <button
+                        onClick={() => openModal('inquiry', `${product.name} - ${plan.name}`)}
+                        className={`w-full py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all ${
+                          plan.popular
+                            ? 'bg-brand-blue hover:bg-blue-600 text-white'
+                            : 'bg-slate-100 hover:bg-slate-200 text-slate-800'
+                        }`}
+                      >
+                        <span>Choose Plan</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </button>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Product FAQs */}
         {product.faqs && product.faqs.length > 0 && (

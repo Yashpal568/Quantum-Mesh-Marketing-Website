@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ModalProvider } from './context/ModalContext';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
@@ -43,6 +43,8 @@ export const App: React.FC = () => {
               <Route path="/" element={<Home />} />
               <Route path="/products" element={<Products />} />
               <Route path="/products/:slug" element={<ProductDetails />} />
+              <Route path="/servora" element={<Navigate to="/products/restaurant-saas" replace />} />
+              <Route path="/products/servora" element={<Navigate to="/products/restaurant-saas" replace />} />
               <Route path="/services" element={<Services />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/about" element={<About />} />
