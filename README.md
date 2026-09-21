@@ -7,6 +7,7 @@
 [![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?style=flat-square&logo=vercel&logoColor=white)](https://vercel.com/)
 
 > **Official Website:** [https://www.quantumesh.in](https://www.quantumesh.in)  
+> **Servora Live App:** [https://servora.quantumesh.in](https://servora.quantumesh.in)  
 > **Headquarters:** PSA Plaza, Awas Vikas, Rudrapur, Uttarakhand, India  
 > **Contact / Inquiries:** [quantumesh.ai@gmail.com](mailto:quantumesh.ai@gmail.com)
 
@@ -21,7 +22,7 @@
 - 🏫 **School Management System (SMS)** — Comprehensive K-12 campus ERP, fee collection, attendance, and parent-student portals.
 - 🕒 **Biometric Hardware Ecosystem** — Facial recognition and optical fingerprint terminals with cloud payroll sync and instant WhatsApp alerts.
 - 🤖 **Agentic AI & LLM Systems** — Multi-agent workflow automation, custom fine-tuned models, and enterprise RAG pipelines.
-- 🍽️ **Servora Restaurant POS** — Cloud-synchronized table billing, KOT printing, and inventory intelligence.
+- 🍽️ **Servora — Restaurant OS & QR Dine-In** ([https://servora.quantumesh.in](https://servora.quantumesh.in)) — Contactless QR menus, Live Kitchen Display (KDS), and Smart GST split-billing platform.
 - ☁️ **Cloud DevOps & GenAI Infrastructure** — Kubernetes microservices, GitOps CI/CD, and private on-premise AI deployments.
 
 ---
