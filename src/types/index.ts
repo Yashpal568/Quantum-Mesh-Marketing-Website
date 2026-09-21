@@ -80,6 +80,14 @@ export interface Project {
   image?: string;
   metrics?: { label: string; value: string };
   technologies: string[];
+  liveUrl?: string;
+  components?: {
+    name: string;
+    tech: string;
+    channel: string;
+    feature: string;
+    url?: string;
+  }[];
 }
 
 export interface Service {

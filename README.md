@@ -8,6 +8,8 @@
 
 > **Official Website:** [https://www.quantumesh.in](https://www.quantumesh.in)  
 > **Servora Live App:** [https://servora.quantumesh.in](https://servora.quantumesh.in)  
+> **GateSphere Live Platform:** [https://gatesphere.quantumesh.in](https://gatesphere.quantumesh.in)  
+> **Visitor Check-In Portal:** [https://visitors-check-in.quantumesh.in](https://visitors-check-in.quantumesh.in)  
 > **Headquarters:** PSA Plaza, Awas Vikas, Rudrapur, Uttarakhand, India  
 > **Contact / Inquiries:** [quantumesh.ai@gmail.com](mailto:quantumesh.ai@gmail.com)
 
@@ -18,11 +20,12 @@
 **Quantum Mesh** is a premier digital technology, enterprise software engineering, and edge-hardware integration firm headquartered in Rudrapur, Uttarakhand. We specialize in building mission-critical B2B management ecosystems, high-performance web platforms, edge biometric attendance hardware, and autonomous Agentic AI workflows.
 
 ### Flagship Solutions & Products:
+- 🛡️ **GateSphere — Enterprise Gate Security & Visitor Management** ([https://gatesphere.quantumesh.in](https://gatesphere.quantumesh.in)) — Touchless dynamic QR gate check-ins, instant employee host approvals, and digital badge generation.
+- 🍽️ **Servora — Restaurant OS & QR Dine-In** ([https://servora.quantumesh.in](https://servora.quantumesh.in)) — Contactless QR menus, Live Kitchen Display (KDS), and Smart GST split-billing platform.
 - 🏥 **Hospital Management System (HMS)** — NABH-ready EMR, OPD/IPD workflows, diagnostic lab sync, and automated billing.
 - 🏫 **School Management System (SMS)** — Comprehensive K-12 campus ERP, fee collection, attendance, and parent-student portals.
 - 🕒 **Biometric Hardware Ecosystem** — Facial recognition and optical fingerprint terminals with cloud payroll sync and instant WhatsApp alerts.
 - 🤖 **Agentic AI & LLM Systems** — Multi-agent workflow automation, custom fine-tuned models, and enterprise RAG pipelines.
-- 🍽️ **Servora — Restaurant OS & QR Dine-In** ([https://servora.quantumesh.in](https://servora.quantumesh.in)) — Contactless QR menus, Live Kitchen Display (KDS), and Smart GST split-billing platform.
 - ☁️ **Cloud DevOps & GenAI Infrastructure** — Kubernetes microservices, GitOps CI/CD, and private on-premise AI deployments.
 
 ---

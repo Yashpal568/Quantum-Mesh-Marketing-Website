@@ -97,14 +97,18 @@ export const products: Product[] = [
   {
     id: 'vms',
     slug: 'vms',
-    name: 'Visitor Management System (VMS)',
-    shortName: 'VMS',
-    code: 'VMS',
+    name: 'GateSphere — Enterprise Gate Security & Visitor Management System',
+    shortName: 'GateSphere',
+    code: 'GateSphere',
     category: 'Enterprise',
-    description: 'Smart visitor tracking with QR, biometrics and real-time notifications.',
-    longDescription: 'Next-generation gate and front-desk security suite providing touchless visitor pre-registration, instant host notifications, badge printing, and real-time perimeter occupancy metrics.',
+    description: 'Touchless QR gate check-in, real-time employee approval alerts, and digital pass verification.',
+    longDescription: 'GateSphere is an enterprise-grade, touchless Visitor Management & Security Intelligence SaaS platform built by Quantum Mesh. It replaces outdated paper gate registers at corporate headquarters, manufacturing plants, and residential complexes with a seamless digital check-in workflow, real-time employee approval alerts, and digital gate pass verification.',
+    headline: 'Next-Gen Enterprise Gate Security & Touchless Visitor Management.',
+    subheadline: 'Replace vulnerable paper gate registers with touchless mobile QR check-ins, sub-15s host approval alerts, digital badge verification, and multi-gate intelligence.',
+    socialProof: 'Trusted by corporate headquarters, industrial manufacturing plants, and residential complexes.',
+    liveUrl: 'https://gatesphere.quantumesh.in/',
     iconName: 'ShieldCheck',
-    badge: 'Security & Access',
+    badge: 'Security Intelligence SaaS',
     image: '/assets/generated/product-vms.jpg',
     theme: {
       bg: 'bg-[#F0FDF4]',
@@ -114,67 +118,172 @@ export const products: Product[] = [
       textAccent: '#16A34A',
       gradient: 'from-emerald-500 to-green-600',
     },
+    pillars: [
+      {
+        icon: 'Zap',
+        title: 'Touchless QR Gate Clearance',
+        quote: 'Process 500+ gate check-ins per minute with zero app download.',
+        points: [
+          'Visitors scan a unique dynamic QR code at the facility gate using their mobile browser—no app download required.',
+          'Eliminates physical contact, paper registers, and congested entry gate queues.',
+          'Generates encrypted digital gate passes valid strictly for approved visit durations.'
+        ]
+      },
+      {
+        icon: 'ChefHat',
+        title: 'Instant Host Approvals',
+        quote: 'Approve or decline visitor entry in under 15 seconds.',
+        points: [
+          'Security guards and employee hosts receive push notifications and instant WebSocket alerts to approve or reject visitors in under 15 seconds.',
+          'View visitor selfie photo, designated vehicle number, and meeting purpose before granting entry.',
+          'Eliminates phone calls and security intercom delays between front gate and host desks.'
+        ]
+      },
+      {
+        icon: 'CreditCard',
+        title: 'Digital Pass & Thermal Print Verification',
+        quote: 'Zero-Trust facility security with 100% auditable digital logs.',
+        points: [
+          'Approved visitors receive a digital entry badge on their phone containing a QR clearance code, valid for their specified visit duration.',
+          'Supports 1-click thermal badge printing on standard 58mm & 80mm security printers at the security booth.',
+          'Multi-gate support with real-time exit scans that calculate overstays and maintain 100% forensic security compliance.'
+        ]
+      }
+    ],
+    featureMatrix: [
+      {
+        feature: '🌐 Marketing & Demo Portal',
+        benefit: 'Modern Next.js 15 product landing page with interactive workflow demo and lead capture at gatesphere.quantumesh.in.'
+      },
+      {
+        feature: '📱 Touchless Check-In Portal',
+        benefit: 'Mobile-optimized guest check-in portal generating instant digital entry passes at visitors-check-in.quantumesh.in.'
+      },
+      {
+        feature: '📲 Guard & Employee Mobile App',
+        benefit: 'React Native (Expo) app published to Google Play Store with fast QR scanning and instant host approval push alerts.'
+      },
+      {
+        feature: '🖥️ Admin Control Panel',
+        benefit: 'Enterprise dashboard tracking real-time gate clearances, peak visitor hours, multi-tenant analytics, and CSV audit logs.'
+      },
+      {
+        feature: '⚡ High-Availability Backend Core',
+        benefit: 'Node.js, MongoDB, and Socket.io engine delivering sub-50ms WebSocket sync, automated data archiving, and RBAC security.'
+      }
+    ],
+    pricingPlans: [
+      {
+        name: 'Starter Facility',
+        price: '₹1,499',
+        period: '/ month',
+        description: 'Ideal for commercial office branches and small gated campuses.',
+        features: [
+          'Up to 2 Active Entry Gates',
+          'Touchless Mobile QR Check-In',
+          'Instant Host WhatsApp & SMS Alerts',
+          'Digital Mobile Entry Passes',
+          '30-Day Auditable Security Logs'
+        ]
+      },
+      {
+        name: 'Enterprise Campus',
+        price: '₹3,499',
+        period: '/ month',
+        popular: true,
+        description: 'Built for corporate headquarters, manufacturing plants, and hospitals.',
+        features: [
+          'Unlimited Entry & Exit Gates',
+          'Android Security Guard Scanner App (Google Play)',
+          'Live WebSocket Approval Sync (<15s)',
+          '1-Click Thermal Badge Printing (58mm/80mm)',
+          'Overstay & Blacklist Breach Alerts',
+          '24/7 Priority Emergency Support'
+        ]
+      },
+      {
+        name: 'Industrial Multi-Plant',
+        price: '₹6,999',
+        period: '/ month',
+        description: 'For multi-location factories, industrial parks, and smart cities.',
+        features: [
+          'Multi-Facility Central Security Command',
+          'Automatic Turnstile & Boom Barrier Relay Sync',
+          'Custom White-Label Branding & Domain',
+          'Dedicated Security Account Manager',
+          '99.9% High-Availability Uptime SLA'
+        ]
+      }
+    ],
     features: [
-      'Touchless kiosk self-registration',
-      'Dynamic QR gate pass generation',
-      'Host instant notification & approval',
-      'Facial photo capture & verification',
-      'Thermal badge printing with photo ID',
-      'Blacklist alerts & perimeter security',
-      'Visitor history & forensic audit logs',
-      'Emergency roll-call evacuation list'
+      'Touchless dynamic QR gate clearance (<1s mobile web load)',
+      'Instant host approval alerts via push notifications & WebSockets (<15s)',
+      'Digital entry pass with QR code and live countdown timer',
+      '1-click thermal badge printing (58mm & 80mm security printers)',
+      'Security guard scanner mobile app (Android Google Play release)',
+      'Multi-gate support with cross-gate entry/exit reconciliation',
+      'Real-time facility occupancy counter & emergency roll-call list',
+      'Zero-Trust encryption with automated daily audit log archiving'
     ],
     metrics: [
-      { label: 'Check-in Time', value: '< 15 secs' },
-      { label: 'Unauthorized Breach Prevention', value: '100%' },
-      { label: 'Host Notification Speed', value: 'Instant (< 1s)' },
-      { label: 'Audit Trail Retention', value: 'Enterprise Compliant' }
+      { label: 'Gate Wait Time Cut', value: '-80%' },
+      { label: 'Check-In Throughput', value: '500+/min' },
+      { label: 'Host Approval Time', value: '< 15s' },
+      { label: 'System Uptime SLA', value: '99.9%' }
     ],
     benefits: [
-      'Modern touchless check-in for corporate headquarters, industrial plants, and secure campuses.',
-      'One-tap host approval via WhatsApp, SMS, and Slack notifications with host photo confirmation.',
-      'Automated NDA signing, safety protocol acknowledgments, and facial photo capture during kiosk arrival.',
-      'Live evacuation list and real-time building occupancy tracking for fire and safety compliance.'
+      'Eliminate paper gate registers completely, preventing confidential client data leaks and visitor information theft.',
+      'Cut vehicle and visitor entry wait times by 80% with instantaneous mobile QR scanning and automated host alerts.',
+      'Maintain 100% forensic security compliance with tamper-proof digital logs, photo captures, and overstay tracking.',
+      'Arm security personnel with a native Android scanner app synced in real time to employee desks across all buildings.'
     ],
     modules: [
       {
-        title: 'Kiosk Self Check-In',
-        desc: 'Interactive iPad or Android tablet kiosk at reception allowing visitors to scan pre-registered invites or enter phone numbers.',
-        highlights: ['Sub-15 second check-in', 'Webcam portrait capture', 'Digital NDA / compliance signature']
+        title: 'Touchless QR Gate Clearance',
+        desc: 'Visitors scan dynamic entrance QR codes with their smartphone browser. No app install needed.',
+        highlights: ['Runs on any mobile browser (Safari, Chrome)', 'Instant selfie & ID upload', 'Configurable digital NDA & safety protocol']
       },
       {
-        title: 'Instant Host Approvals',
-        desc: 'Instant ping delivered to the designated host with visitor photo and purpose of visit for one-tap accept or decline.',
-        highlights: ['WhatsApp & SMS webhooks', 'Slack and Microsoft Teams bot alerts', 'Host location & meeting room routing']
+        title: 'Instant Host Approvals & Guard Scanner',
+        desc: 'Real-time WebSocket alerts ping employee hosts on their phones and laptops for instant 1-tap approvals.',
+        highlights: ['Sub-15 second approval turnaround', 'Android Guard App with camera barcode reader', 'Slack, Teams & SMS fallback channels']
       },
       {
-        title: 'Thermal Badge Printing',
-        desc: 'Automatic high-speed thermal badge printing with visitor name, host name, valid floor zone, and unique exit QR code.',
-        highlights: ['Compatible with Zebra & Brother printers', 'Color-coded visitor category labels', 'Auto-expiring visual badges']
+        title: 'Digital Pass & Thermal Badge Printing',
+        desc: 'Visitors receive digital phone passes with animated verification rings or printable thermal passes.',
+        highlights: ['Compatible with Brother & Zebra 58mm/80mm', 'Time-expiring visitor security badges', 'Vehicle license number recorded on badge']
       },
       {
-        title: 'Perimeter Security & Blacklist',
-        desc: 'Instant red flags if an unauthorized person or former contractor attempts check-in at any campus entry gate.',
-        highlights: ['VIP notifications for senior guests', 'Centralized multi-gate sync', 'Vehicle license plate registration']
+        title: 'Multi-Gate Real-Time Security Intelligence',
+        desc: 'Enterprise command dashboard reporting real-time building occupancy, peak visitor volume, and emergency muster.',
+        highlights: ['Cross-gate entry & exit tracking', 'Real-time blacklist alerts', '1-click CSV audit log export']
       }
     ],
     workflow: [
-      { step: '01', title: 'Pre-Invitation', desc: 'Host sends calendar invite with a secure unique QR access pass.' },
-      { step: '02', title: 'Kiosk / Gate Scan', desc: 'Visitor scans pass or signs in using tablet kiosk in under 15 seconds.' },
-      { step: '03', title: 'Host Ping & Approval', desc: 'Host receives instant notification to approve arrival with one tap.' },
-      { step: '04', title: 'Badge & Checkout', desc: 'Thermal badge is issued, followed by tap-out checkout at exit.' }
+      { step: '01', title: 'Gate QR Scan', desc: 'Visitor arrives at facility and scans dynamic entrance QR code on their smartphone in seconds.' },
+      { step: '02', title: 'Host Instant Ping', desc: 'Employee host receives instant push and WebSocket alert with visitor details and photo.' },
+      { step: '03', title: 'Sub-15s Approval', desc: 'Host approves entry with 1 tap, automatically generating an encrypted digital gate pass.' },
+      { step: '04', title: 'Guard Clearance & Exit', desc: 'Guard scans digital badge to grant entry; automated scan at exit checks out and prevents overstays.' }
     ],
     faqs: [
       {
-        question: 'Does VMS support facial recognition hardware?',
-        answer: 'Yes, VMS integrates seamlessly with dual-camera biometric terminals for automated face recognition check-in for frequent vendors and employees.'
+        question: 'Do visitors need to download an application to check in?',
+        answer: 'No! GateSphere operates touchlessly via mobile web browsers. Visitors simply scan the dynamic gate QR code on arrival and their pass generates in seconds.'
       },
       {
-        question: 'Can hosts pre-register visitors in advance?',
-        answer: 'Yes, hosts can generate personalized pre-registration links or calendar invites that include a unique QR pass for VIP express lane entry.'
+        question: 'How do security guards scan and verify visitor passes?',
+        answer: 'Security guards use the GateSphere Android App (available on Google Play Store) or any tablet browser to scan the visitor\'s digital QR pass and verify live approval status.'
+      },
+      {
+        question: 'How does GateSphere handle multi-gate enterprise complexes?',
+        answer: 'GateSphere synchronizes all entry and exit gates in real time via WebSockets. A visitor can enter through Gate 1 and check out via Gate 4 with immediate perimeter occupancy recalculation.'
+      },
+      {
+        question: 'Does GateSphere eliminate security risks associated with physical paper logs?',
+        answer: 'Yes! Paper registers leak phone numbers, company names, and visitor details to anyone glancing at the reception desk. GateSphere encrypts all visitor data, enforces strict Role-Based Access Control (RBAC), and provides tamper-proof audit trails.'
       }
     ],
-    techStack: ['React Native', 'React.js', 'WebSockets', 'AWS IoT', 'QR/NFC Core'],
+    techStack: ['Next.js 15', 'React Native (Expo)', 'Node.js', 'MongoDB', 'Socket.io', 'Tailwind CSS', 'Recharts'],
     mockupType: 'vms'
   },
   {

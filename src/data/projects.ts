@@ -67,35 +67,71 @@ export const featuredProjects: Project[] = [
   },
   {
     id: 'proj-3',
-    slug: 'manipal-campus-access-control',
-    title: 'Campus Edge AI Biometric Access & Visitor Turnstiles',
-    client: 'Manipal University Campus Facility',
-    location: 'Campus Network Hub',
-    timeline: '6 Weeks Deployment',
-    category: 'Higher Education',
-    tags: ['Education', 'IoT Biometric', 'Hardware'],
-    description: 'High-throughput dual-IR face recognition access turnstiles and visitor pass kiosks deployed across 4 campus entry gates serving 12,000 students and staff.',
-    challenge: 'Peak morning gate congestion caused lines stretching onto public roads. Security guards could not effectively verify physical student ID cards during rush hours.',
-    solution: 'Installed edge AI biometric terminals with <0.2-second facial verification, RFID card failover, and instant gate turnstile release connected to the student ERP.',
+    slug: 'gatesphere-enterprise-visitor-management',
+    title: 'GateSphere — Next-Gen Enterprise Gate Security & Visitor Management System',
+    client: 'GateSphere Security Platform (Enterprise SaaS Case Study)',
+    location: 'Corporate Headquarters & Manufacturing Plants',
+    timeline: '6 Weeks Architecture & Rollout',
+    category: 'Govt & Enterprise',
+    tags: ['Security SaaS', 'Next.js 15', 'React Native', 'Socket.io', 'Google Play'],
+    description: 'Enterprise-grade, touchless Visitor Management & Security Intelligence SaaS platform built by Quantum Mesh, replacing paper gate registers with instant digital check-ins, sub-15s approvals, and digital gate passes.',
+    challenge: 'Corporate headquarters, manufacturing facilities, and residential complexes relied on outdated, vulnerable paper gate registers—leading to confidential visitor data leaks, 10-minute queue delays, and zero real-time perimeter visibility.',
+    solution: 'Quantum Mesh architected and engineered GateSphere: a full ecosystem comprising a touchless mobile QR check-in portal, native React Native Android app on Google Play for security guards, and high-availability WebSocket admin console processing 500+ check-ins/min with 99.9% uptime.',
     results: [
-      { label: 'Gate Clearance Speed', value: '< 0.2s' },
-      { label: 'Unauthorized Intrusions', value: '0 Cases' },
-      { label: 'Daily Campus Punches', value: '15,000+' }
+      { label: 'Gate Wait Time Cut', value: '-80%' },
+      { label: 'Check-In Throughput', value: '500+/min' },
+      { label: 'Host Approval Time', value: '< 15 Secs' }
     ],
     testimonial: {
-      quote: 'Quantum Mesh’s biometric hardware eliminated morning gate bottlenecks completely. 12,000 students enter campus smoothly without queue delays.',
-      author: 'Chief Security Officer',
-      designation: 'University Campus Management'
+      quote: 'GateSphere replaced paper logbooks across all our factory gates. Security wait times dropped by 80% while our security officers gained 100% digital auditability.',
+      author: 'Head of Facility Operations & Security',
+      designation: 'Enterprise Industrial Campus'
     },
-    image: '/assets/generated/biometric-ecosystem.jpg',
+    image: '/assets/generated/product-vms.jpg',
+    liveUrl: 'https://gatesphere.quantumesh.in/',
     highlights: [
-      'Dual-camera anti-spoofing facial recognition (<0.2s)',
-      'Automatic turnstile relay integration',
-      'Touchless QR pre-registered visitor passes',
-      'Real-time campus head-count evacuation monitor'
+      'Touchless QR gate check-in via mobile browser with zero app download required',
+      'Instant push & WebSocket host approval alerts in under 15 seconds',
+      'Digital entry pass with QR clearance code and 1-click thermal receipt printing',
+      'Multi-gate support with real-time occupancy counting and overstay alarms',
+      'Zero-Trust enterprise security with automated daily log archiving'
     ],
-    metrics: { label: 'Check-in Speed', value: '< 0.2s' },
-    technologies: ['Edge AI IR Terminals', 'MQTT', 'WebSockets', 'React', 'Linux Embedded']
+    components: [
+      {
+        name: 'Marketing Website',
+        tech: 'Next.js 15, Framer Motion',
+        channel: 'https://gatesphere.quantumesh.in/',
+        feature: 'Modern product landing page, interactive workflow demo & lead capture.',
+        url: 'https://gatesphere.quantumesh.in/'
+      },
+      {
+        name: 'Visitor Check-In Portal',
+        tech: 'Next.js 15, Tailwind CSS',
+        channel: 'https://visitors-check-in.quantumesh.in/',
+        feature: 'Touchless QR gate check-in & digital entry pass generation.',
+        url: 'https://visitors-check-in.quantumesh.in/'
+      },
+      {
+        name: 'Mobile Application',
+        tech: 'React Native (Expo)',
+        channel: 'Android (Google Play Release)',
+        feature: 'Security guard scanner UI & employee instant host approval interface.'
+      },
+      {
+        name: 'Admin Control Panel',
+        tech: 'Next.js 15, Recharts',
+        channel: 'Enterprise Cloud',
+        feature: 'Live gate clearance dashboard, multi-tenant analytics, & CSV audit logs.'
+      },
+      {
+        name: 'Backend Core',
+        tech: 'Node.js, MongoDB, Socket.io',
+        channel: 'High-Availability Cloud',
+        feature: 'Low-latency WebSocket sync, automated data cleanup, & RBAC security.'
+      }
+    ],
+    metrics: { label: 'Wait Time Cut', value: '-80%' },
+    technologies: ['Next.js 15', 'React Native (Expo)', 'Node.js', 'MongoDB', 'Socket.io', 'Tailwind CSS']
   },
   {
     id: 'proj-4',

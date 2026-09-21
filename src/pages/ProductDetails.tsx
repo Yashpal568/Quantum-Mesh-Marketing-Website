@@ -38,6 +38,9 @@ export const ProductDetails: React.FC = () => {
   const product = products.find((p) => 
     p.slug === slug || 
     (slug === 'servora' && p.slug === 'restaurant-saas') ||
+    (slug === 'gatesphere' && p.slug === 'vms') ||
+    (slug === 'gate-sphere' && p.slug === 'vms') ||
+    (slug === 'visitor-management' && p.slug === 'vms') ||
     (slug === 'school-erp' && p.slug === 'school-management-saas') || 
     (slug === 'school-management-system-saas' && p.slug === 'school-management-saas') ||
     (slug === 'school-management' && p.slug === 'school-management-saas')
@@ -46,6 +49,15 @@ export const ProductDetails: React.FC = () => {
   if (!product) {
     return <Navigate to="/products" replace />;
   }
+
+  const isEmerald = product.slug === 'vms' || product.id === 'vms';
+  const isPink = product.slug === 'restaurant-saas' || product.id === 'restaurant-saas';
+
+  const primaryGradient = isEmerald 
+    ? 'from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 shadow-emerald-500/25'
+    : isPink
+    ? 'from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 shadow-pink-500/25'
+    : 'from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-blue-500/25';
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -138,20 +150,20 @@ export const ProductDetails: React.FC = () => {
                     href={product.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 text-white shadow-lg shadow-pink-500/25 transition-all gap-2"
+                    className={`inline-flex items-center justify-center px-6 py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r ${primaryGradient} text-white shadow-lg transition-all gap-2`}
                   >
-                    <Sparkles className="w-4 h-4 text-pink-200" />
+                    <Sparkles className="w-4 h-4 text-white/80" />
                     <span>Start Free 14-Day Trial</span>
                   </a>
 
                   <a
-                    href={product.liveUrl}
+                    href={product.id === 'vms' ? 'https://visitors-check-in.quantumesh.in/' : product.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl font-bold text-sm bg-white text-slate-800 border border-slate-200 hover:bg-slate-50 hover:border-slate-300 shadow-xs transition-all gap-2"
                   >
-                    <span>Explore Live Interactive Demo</span>
-                    <ExternalLink className="w-4 h-4 text-pink-600" />
+                    <span>{product.id === 'vms' ? 'Touchless Check-In Portal' : 'Explore Live Interactive Demo'}</span>
+                    <ExternalLink className={`w-4 h-4 ${isEmerald ? 'text-emerald-600' : isPink ? 'text-pink-600' : 'text-brand-blue'}`} />
                   </a>
                 </div>
               ) : (
@@ -207,9 +219,11 @@ export const ProductDetails: React.FC = () => {
                         href={product.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold border backdrop-blur-md shadow-sm bg-pink-600 text-white border-pink-400/50 hover:bg-pink-700 transition-colors"
+                        className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold border backdrop-blur-md shadow-sm ${
+                          isEmerald ? 'bg-emerald-600 text-white border-emerald-400/50 hover:bg-emerald-700' : 'bg-pink-600 text-white border-pink-400/50 hover:bg-pink-700'
+                        } transition-colors`}
                       >
-                        <span>Live at servora.quantumesh.in</span>
+                        <span>Live at {product.liveUrl.replace('https://', '').replace(/\/$/, '')}</span>
                         <ExternalLink className="w-3 h-3" />
                       </a>
                     ) : (
@@ -252,7 +266,7 @@ export const ProductDetails: React.FC = () => {
         {product.pillars && product.pillars.length > 0 && (
           <div className="mb-16">
             <div className="text-left mb-8">
-              <span className="text-xs font-bold tracking-widest text-pink-600 uppercase flex items-center gap-1.5">
+              <span className={`text-xs font-bold tracking-widest ${isEmerald ? 'text-emerald-600' : isPink ? 'text-pink-600' : 'text-brand-blue'} uppercase flex items-center gap-1.5`}>
                 <Zap className="w-3.5 h-3.5" />
                 <span>VALUE PROPOSITION</span>
               </span>
@@ -260,7 +274,9 @@ export const ProductDetails: React.FC = () => {
                 The 3 Core Pillars
               </h2>
               <p className="text-sm text-slate-600 mt-1">
-                Engineered to accelerate table turns, eliminate kitchen errors, and maximize profit margins.
+                {isEmerald 
+                  ? 'Zero-trust touchless security engineered for high-throughput enterprise perimeters.'
+                  : 'Engineered to accelerate table turns, eliminate kitchen errors, and maximize profit margins.'}
               </p>
             </div>
 
@@ -268,10 +284,14 @@ export const ProductDetails: React.FC = () => {
               {product.pillars.map((pillar, idx) => (
                 <div
                   key={idx}
-                  className="bg-white rounded-3xl p-7 border border-slate-200/90 shadow-xs hover:shadow-md hover:border-pink-200 transition-all flex flex-col justify-between group"
+                  className={`bg-white rounded-3xl p-7 border border-slate-200/90 shadow-xs hover:shadow-md ${
+                    isEmerald ? 'hover:border-emerald-200' : isPink ? 'hover:border-pink-200' : 'hover:border-blue-200'
+                  } transition-all flex flex-col justify-between group`}
                 >
                   <div>
-                    <div className="w-12 h-12 rounded-2xl bg-pink-50 text-pink-600 flex items-center justify-center mb-5 border border-pink-100 group-hover:scale-110 transition-transform">
+                    <div className={`w-12 h-12 rounded-2xl ${
+                      isEmerald ? 'bg-emerald-50 text-emerald-600 border-emerald-100' : isPink ? 'bg-pink-50 text-pink-600 border-pink-100' : 'bg-blue-50 text-brand-blue border-blue-100'
+                    } flex items-center justify-center mb-5 border group-hover:scale-110 transition-transform`}>
                       {pillar.icon === 'Zap' && <Zap className="w-6 h-6" />}
                       {pillar.icon === 'ChefHat' && <ChefHat className="w-6 h-6" />}
                       {pillar.icon === 'CreditCard' && <CreditCard className="w-6 h-6" />}
@@ -282,14 +302,18 @@ export const ProductDetails: React.FC = () => {
                       {pillar.title}
                     </h3>
 
-                    <div className="p-3 rounded-xl bg-pink-50/70 border border-pink-100/80 text-xs font-bold text-pink-700 mb-4 leading-relaxed">
+                    <div className={`p-3 rounded-xl ${
+                      isEmerald ? 'bg-emerald-50/70 border-emerald-100/80 text-emerald-800' : isPink ? 'bg-pink-50/70 border-pink-100/80 text-pink-700' : 'bg-blue-50/70 border-blue-100/80 text-brand-blue'
+                    } border text-xs font-bold mb-4 leading-relaxed`}>
                       “{pillar.quote}”
                     </div>
 
                     <ul className="space-y-2.5">
                       {pillar.points.map((pt, pIdx) => (
                         <li key={pIdx} className="flex items-start text-xs sm:text-sm text-slate-600 gap-2.5">
-                          <CheckCircle2 className="w-4 h-4 text-pink-600 shrink-0 mt-0.5" />
+                          <CheckCircle2 className={`w-4 h-4 ${
+                            isEmerald ? 'text-emerald-600' : isPink ? 'text-pink-600' : 'text-brand-blue'
+                          } shrink-0 mt-0.5`} />
                           <span className="leading-relaxed">{pt}</span>
                         </li>
                       ))}
@@ -490,7 +514,9 @@ export const ProductDetails: React.FC = () => {
         {product.pricingPlans && product.pricingPlans.length > 0 && (
           <div className="mb-16">
             <div className="text-left sm:text-center max-w-2xl mx-auto mb-10">
-              <span className="text-xs font-bold tracking-widest text-pink-600 uppercase flex items-center justify-start sm:justify-center gap-1.5">
+              <span className={`text-xs font-bold tracking-widest uppercase flex items-center justify-start sm:justify-center gap-1.5 ${
+                isEmerald ? 'text-emerald-600' : isPink ? 'text-pink-600' : 'text-brand-blue'
+              }`}>
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>TRANSPARENT PRICING</span>
               </span>
@@ -498,7 +524,9 @@ export const ProductDetails: React.FC = () => {
                 Transparent Pricing Plans
               </h2>
               <p className="text-sm sm:text-base text-slate-600 mt-2">
-                Predictable monthly subscriptions. <strong>Zero percent (0%)</strong> order commission. Keep 100% of your earnings.
+                {isEmerald
+                  ? 'Predictable enterprise subscriptions. No hidden gate fees, per-visitor surcharges, or hardware lock-in.'
+                  : 'Predictable monthly subscriptions. Zero percent (0%) order commission. Keep 100% of your earnings.'}
               </p>
             </div>
 
@@ -508,13 +536,21 @@ export const ProductDetails: React.FC = () => {
                   key={idx}
                   className={`rounded-3xl p-7 sm:p-8 flex flex-col justify-between transition-all relative ${
                     plan.popular
-                      ? 'bg-gradient-to-b from-slate-900 via-slate-900 to-brand-navy text-white border-2 border-pink-500 shadow-xl scale-100 lg:scale-105 z-10'
+                      ? `bg-gradient-to-b from-slate-900 via-slate-900 to-brand-navy text-white border-2 ${
+                          isEmerald ? 'border-emerald-500' : isPink ? 'border-pink-500' : 'border-blue-500'
+                        } shadow-xl scale-100 lg:scale-105 z-10`
                       : 'bg-white text-slate-900 border border-slate-200/90 shadow-xs hover:border-slate-300'
                   }`}
                 >
                   {plan.popular && (
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                      <span className="px-3.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-sm flex items-center gap-1">
+                      <span className={`px-3.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider text-white shadow-sm flex items-center gap-1 ${
+                        isEmerald
+                          ? 'bg-gradient-to-r from-emerald-500 to-teal-600'
+                          : isPink
+                          ? 'bg-gradient-to-r from-pink-500 to-rose-500'
+                          : 'bg-gradient-to-r from-blue-600 to-indigo-600'
+                      }`}>
                         <Star className="w-3 h-3 fill-white" />
                         Most Popular
                       </span>
@@ -541,7 +577,11 @@ export const ProductDetails: React.FC = () => {
                     <div className={`space-y-3 pt-4 border-t ${plan.popular ? 'border-white/10' : 'border-slate-100'}`}>
                       {plan.features.map((feat, fIdx) => (
                         <div key={fIdx} className="flex items-start gap-2.5 text-xs sm:text-sm">
-                          <CheckCircle2 className={`w-4 h-4 shrink-0 mt-0.5 ${plan.popular ? 'text-pink-400' : 'text-emerald-600'}`} />
+                          <CheckCircle2 className={`w-4 h-4 shrink-0 mt-0.5 ${
+                            plan.popular
+                              ? isEmerald ? 'text-emerald-400' : isPink ? 'text-pink-400' : 'text-blue-400'
+                              : isEmerald ? 'text-emerald-600' : 'text-emerald-600'
+                          }`} />
                           <span className={plan.popular ? 'text-slate-200' : 'text-slate-700'}>{feat}</span>
                         </div>
                       ))}
@@ -556,11 +596,15 @@ export const ProductDetails: React.FC = () => {
                         rel="noopener noreferrer"
                         className={`w-full py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all ${
                           plan.popular
-                            ? 'bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white shadow-lg shadow-pink-500/30'
+                            ? isEmerald
+                              ? 'bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white shadow-lg shadow-emerald-500/30'
+                              : isPink
+                              ? 'bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white shadow-lg shadow-pink-500/30'
+                              : 'bg-brand-blue hover:bg-blue-600 text-white shadow-lg shadow-blue-500/30'
                             : 'bg-slate-100 hover:bg-slate-200 text-slate-800'
                         }`}
                       >
-                        <span>Start Free 14-Day Trial</span>
+                        <span>{isEmerald ? 'Deploy GateSphere' : 'Start Free 14-Day Trial'}</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </a>
                     ) : (

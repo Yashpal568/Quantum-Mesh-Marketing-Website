@@ -87,10 +87,10 @@ export const Navbar: React.FC = () => {
       icon: <Building2 className="w-4 h-4 text-blue-600" />
     },
     {
-      name: 'Visitor Management System (VMS)',
-      desc: 'Smart visitor tracking with QR pass & biometric security',
+      name: 'Visitor Management (GateSphere)',
+      desc: 'Touchless QR entry passes, instant host alerts & guard app',
       path: '/products/vms',
-      badge: 'Security',
+      badge: 'Live SaaS',
       icon: <ShieldCheck className="w-4 h-4 text-emerald-600" />
     },
     {

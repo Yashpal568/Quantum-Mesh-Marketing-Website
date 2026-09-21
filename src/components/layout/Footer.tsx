@@ -166,7 +166,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link to="/products/vms" className="hover:text-brand-blue transition-colors block text-slate-600 hover:translate-x-0.5 duration-150">
-                  Visitor Pass (VMS)
+                  Visitor Security (GateSphere)
                 </Link>
               </li>
               <li>
