@@ -1,0 +1,31 @@
+# Quantum Mesh Robots.txt Specification
+User-agent: *
+Allow: /
+
+# Explicit Search Engine Bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# AI Search & LLM Retrieval Bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Sitemap & Machine-Readable Declarations
+Sitemap: https://www.quantumesh.in/sitemap.xml
+# AI Search Index: https://www.quantumesh.in/llms.txt
+# Intent Matrix: https://www.quantumesh.in/seo-intent.json

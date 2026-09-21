@@ -1,0 +1,23 @@
+{
+  "name": "Quantum Mesh — Digital Solutions & Software Products",
+  "short_name": "Quantum Mesh",
+  "description": "#1 Website Developer & Custom Management System Software Company in Uttarakhand | IT Services India",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAFCFF",
+  "theme_color": "#2563EB",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"],
+  "lang": "en-IN"
+}

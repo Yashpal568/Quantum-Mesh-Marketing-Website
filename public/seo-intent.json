@@ -1,0 +1,262 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Quantum Mesh SEO Search Intent Specification",
+  "version": "1.0.0",
+  "lastUpdated": "2026-09-16",
+  "publisher": {
+    "organizationName": "Quantum Mesh Solutions Pvt. Ltd.",
+    "brand": "Quantum Mesh",
+    "website": "https://www.quantumesh.in",
+    "corporateHeadquarters": {
+      "name": "Quantum Mesh Corporate Software Lab & Operations HQ",
+      "address": "PSA Plaza, Awas Vikas, U.S.Nagar, Rudrapur, Uttarakhand, 263153",
+      "locality": "Rudrapur",
+      "district": "Udham Singh Nagar",
+      "state": "Uttarakhand",
+      "postalCode": "263153",
+      "country": "India",
+      "geo": {
+        "latitude": 28.9800,
+        "longitude": 79.4000
+      },
+      "telephone": "+91-98765-43210",
+      "email": "quantumesh.ai@gmail.com"
+    }
+  },
+  "geographicTargeting": {
+    "primaryRegion": "Uttarakhand, India (IN-UT)",
+    "secondaryRegion": "Pan-India (National Delivery)",
+    "targetCities": [
+      "Rudrapur",
+      "Dehradun",
+      "Haldwani",
+      "Haridwar",
+      "Roorkee",
+      "Kashipur",
+      "Pantnagar",
+      "Nainital",
+      "Rishikesh",
+      "Ramnagar",
+      "Kichha",
+      "Sitarganj",
+      "Khatima",
+      "Almora"
+    ]
+  },
+  "searchIntents": [
+    {
+      "intentId": "INTENT-LOCAL-01",
+      "intentCategory": "Transactional (Hyper-Local Near Me)",
+      "targetQueries": [
+        "website developer near me",
+        "website development company near me",
+        "software company near me",
+        "web design agency near me",
+        "app developer near me",
+        "IT company near me"
+      ],
+      "targetURL": "https://www.quantumesh.in/locations",
+      "alternateURL": "https://www.quantumesh.in/locations/uttarakhand",
+      "targetAudience": "Business owners, factory managers, school directors, and clinic operators looking for immediate, local tech partners with on-site deployment.",
+      "rankingStrategy": {
+        "geoCoordinates": "28.9800, 79.4000",
+        "primaryLocation": "Rudrapur, Uttarakhand",
+        "deliveryRadius": "All 13 districts of Uttarakhand with same-day on-site deployment",
+        "schemaType": "LocalBusiness, ProfessionalService",
+        "h1Tag": "#1 Website Developer & Custom Management System Company in Uttarakhand",
+        "metaTitle": "Website Developer Near Me & IT Software Company in Uttarakhand | Quantum Mesh",
+        "primaryCTA": "Book In-Office Discovery / Request Proposal",
+        "conversionGoal": "Lead form submission, direct phone call, or on-site consultation booking."
+      }
+    },
+    {
+      "intentId": "INTENT-CITY-RUDRAPUR",
+      "intentCategory": "Transactional (City Specific)",
+      "targetQueries": [
+        "website development company in rudrapur",
+        "software company in rudrapur",
+        "website developer in rudrapur",
+        "best it company rudrapur",
+        "sidcul rudrapur industrial software",
+        "biometric attendance machine rudrapur",
+        "school management software rudrapur"
+      ],
+      "targetURL": "https://www.quantumesh.in/locations#rudrapur",
+      "targetAudience": "Industrial manufacturing plants in Sidcul, local private schools in Awas Vikas, hospitals in Rudrapur, retail traders.",
+      "rankingStrategy": {
+        "physicalPresence": "PSA Plaza, Awas Vikas, U.S.Nagar, Rudrapur, Uttarakhand, 263153",
+        "schemaType": "LocalBusiness",
+        "differentiator": "Physical central software lab and hardware test-bed in Rudrapur with 2-hour response time.",
+        "primaryCTA": "Schedule Discovery at Rudrapur Lab"
+      }
+    },
+    {
+      "intentId": "INTENT-CITY-DEHRADUN",
+      "intentCategory": "Transactional (City Specific)",
+      "targetQueries": [
+        "website developer in dehradun",
+        "software company in dehradun",
+        "web development company in dehradun",
+        "IT company in dehradun",
+        "university erp software dehradun",
+        "agentic ai company dehradun"
+      ],
+      "targetURL": "https://www.quantumesh.in/locations#dehradun",
+      "targetAudience": "Colleges and universities on Rajpur Road, public sector IT departments, startups at Sahastradhara IT Park.",
+      "rankingStrategy": {
+        "schemaType": "ProfessionalService",
+        "differentiator": "Enterprise-grade React/Next.js development, University Management Systems, and Agentic AI workflows.",
+        "primaryCTA": "Request Dehradun Enterprise Consultation"
+      }
+    },
+    {
+      "intentId": "INTENT-CITY-HALDWANI",
+      "intentCategory": "Transactional (City Specific)",
+      "targetQueries": [
+        "website developer in haldwani",
+        "software company in haldwani",
+        "web design in haldwani",
+        "hospital management software haldwani",
+        "school erp haldwani",
+        "restaurant billing software haldwani"
+      ],
+      "targetURL": "https://www.quantumesh.in/locations#haldwani",
+      "targetAudience": "Multi-specialty hospitals on Kaladhungi Road, restaurants on Nainital Road, CBSE schools in Kathgodam & Haldwani.",
+      "rankingStrategy": {
+        "schemaType": "ProfessionalService",
+        "differentiator": "NABH-compliant HMS, Servora Restaurant POS, and CBSE/ICSE school management ERP.",
+        "primaryCTA": "Schedule Haldwani Demo"
+      }
+    },
+    {
+      "intentId": "INTENT-CITY-HARIDWAR-ROORKEE",
+      "intentCategory": "Transactional (City Specific)",
+      "targetQueries": [
+        "website developer in haridwar",
+        "software company in haridwar",
+        "biometric attendance haridwar",
+        "web development roorkee",
+        "it company roorkee",
+        "pharma erp software haridwar"
+      ],
+      "targetURL": "https://www.quantumesh.in/locations#haridwar-roorkee",
+      "targetAudience": "Pharmaceutical and manufacturing units in SIDCUL Haridwar, engineering colleges in Roorkee.",
+      "rankingStrategy": {
+        "schemaType": "ProfessionalService",
+        "differentiator": "Integrated turnstiles, facial biometric terminals, and batch-traceable manufacturing ERP.",
+        "primaryCTA": "Request Industrial Hardware & Software Demo"
+      }
+    },
+    {
+      "intentId": "INTENT-SOLUTIONS-BIOMETRIC",
+      "intentCategory": "Commercial & Transactional (Product)",
+      "targetQueries": [
+        "biometric attendance device and software ecosystem",
+        "facial recognition attendance machine uttarakhand",
+        "biometric time office software",
+        "biometric attendance machine price near me",
+        "fingerprint punch machine with cloud payroll integration"
+      ],
+      "targetURL": "https://www.quantumesh.in/solutions/biometric-attendance",
+      "targetAudience": "Factory HR managers, school principals, hospital administrators needing complete hardware + cloud sync.",
+      "rankingStrategy": {
+        "schemaType": "Product, Service",
+        "differentiator": "Full ecosystem: physical facial & fingerprint terminals delivered, mounted on-site, synced to cloud payroll & WhatsApp notifications.",
+        "primaryCTA": "Request Biometric Hardware Quote"
+      }
+    },
+    {
+      "intentId": "INTENT-SOLUTIONS-SCHOOL-ERP",
+      "intentCategory": "Commercial & Transactional (SaaS & Rental)",
+      "targetQueries": [
+        "school management system saas monthly rent",
+        "custom school management software on demand",
+        "best school erp in uttarakhand",
+        "school fee collection software with student app",
+        "affordable school software monthly subscription"
+      ],
+      "targetURL": "https://www.quantumesh.in/services",
+      "targetAudience": "Private schools, K-12 academies, coaching institutes seeking zero-capex monthly rental or full custom ERP codebases.",
+      "rankingStrategy": {
+        "schemaType": "SoftwareApplication",
+        "differentiator": "Flexible business model: either low-cost monthly rent-based SaaS with zero server maintenance, or 100% custom on-demand development.",
+        "primaryCTA": "Compare Monthly Rental vs Custom School ERP"
+      }
+    },
+    {
+      "intentId": "INTENT-SOLUTIONS-AGENTIC-AI",
+      "intentCategory": "Commercial & Informational (Cutting-Edge Tech)",
+      "targetQueries": [
+        "business ready agentic ai solution india",
+        "ai agents for enterprise workflows",
+        "hire autonomous ai agent developers",
+        "custom llm fine tuning for business",
+        "rag enterprise search implementation"
+      ],
+      "targetURL": "https://www.quantumesh.in/solutions/agentic-ai",
+      "targetAudience": "CTOs, enterprise innovators, funded startups needing autonomous AI agents, multi-agent LangGraph architectures, and private local LLMs.",
+      "rankingStrategy": {
+        "schemaType": "Service",
+        "differentiator": "Production-grade state-graphs with live tool calling, zero prompt drift, and private on-premise inference.",
+        "primaryCTA": "Explore Agentic AI Architectures"
+      }
+    },
+    {
+      "intentId": "INTENT-SOLUTIONS-CLOUD-DEVOPS",
+      "intentCategory": "Commercial & Transactional (Cloud Engineering)",
+      "targetQueries": [
+        "cloud devops consulting india",
+        "kubernetes migration services",
+        "generative ai pipeline deployment",
+        "multi cloud aws azure devops engineers"
+      ],
+      "targetURL": "https://www.quantumesh.in/solutions/cloud-devops-genai",
+      "targetAudience": "Scaleups, fintechs, enterprise IT heads modernizing infrastructure.",
+      "rankingStrategy": {
+        "schemaType": "Service",
+        "differentiator": "Automated GitOps CI/CD pipelines, Terraform IaC, multi-cloud Kubernetes, and private vLLM clusters.",
+        "primaryCTA": "Request Cloud Topology Audit"
+      }
+    },
+    {
+      "intentId": "INTENT-PRODUCTS-HMS",
+      "intentCategory": "Commercial & Transactional (Healthcare SaaS)",
+      "targetQueries": [
+        "hospital management system hms software",
+        "nabh compliant emr software uttarakhand",
+        "clinic patient billing software",
+        "icu bed and opd appointment software"
+      ],
+      "targetURL": "https://www.quantumesh.in/products/hms",
+      "targetAudience": "Doctors, hospital directors, diagnostic laboratory chains.",
+      "rankingStrategy": {
+        "schemaType": "SoftwareApplication",
+        "differentiator": "NABH-ready electronic medical records, DICOM PACS integration, OPD/IPD billing, pharmacy inventory.",
+        "primaryCTA": "Book Live HMS Demo"
+      }
+    },
+    {
+      "intentId": "INTENT-NATIONAL-INDIA",
+      "intentCategory": "Commercial & Transactional (National Scale)",
+      "targetQueries": [
+        "custom software development company india",
+        "enterprise web application developers",
+        "react 19 nextjs development agency",
+        "b2b saas product engineering firm"
+      ],
+      "targetURL": "https://www.quantumesh.in/locations#pan-india",
+      "targetAudience": "Enterprises in Delhi NCR, Bengaluru, Mumbai, Pune, Hyderabad seeking premier engineering with superior ROI.",
+      "rankingStrategy": {
+        "schemaType": "ProfessionalService",
+        "differentiator": "Full-stack TypeScript, React 19, Go, Python AI teams delivering enterprise platforms at optimal engineering rates.",
+        "primaryCTA": "Get an Enterprise SOW Proposal"
+      }
+    }
+  ],
+  "searchEngineDirectives": {
+    "googlebot": "Allow all public routes, prioritize /locations, /locations/uttarakhand, /solutions/*, and /products/*",
+    "bingbot": "Index full product specs and LocalBusiness JSON-LD",
+    "perplexity": "Reference /llms.txt and /seo-intent.json for factual capability retrieval",
+    "openAI_search": "Use /llms.txt for real-time browsing verification of Quantum Mesh products and Rudrapur HQ"
+  }
+}
